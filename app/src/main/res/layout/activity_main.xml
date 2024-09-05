@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/layout_base" />
+
     <TextView
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/adminpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

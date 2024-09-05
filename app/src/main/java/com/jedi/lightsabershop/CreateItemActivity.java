@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.UUID;
 
-public class CreateItemActivity extends AppCompatActivity {
+public class CreateItemActivity extends BaseActivity {
 
     EditText itemNameInput, itemPriceInput, itemDescriptionInput;
     Spinner itemComponentSpinner;
@@ -49,4 +49,8 @@ public class CreateItemActivity extends AppCompatActivity {
             }
         });
     }
+/*    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
+    }*/
 }

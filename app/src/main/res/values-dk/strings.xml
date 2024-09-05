@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lyssværd Butik</string>
+    <string name="create_item">Opret produkt</string>
+    <string name="create_new_item">Opret nyt produkt</string>
+    <string name="price">Pris</string>
+    <string name="description">Beskrivelse</string>
+    <string name="item_name">Navn</string>
+
+</resources>

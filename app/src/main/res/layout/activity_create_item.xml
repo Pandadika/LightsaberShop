@@ -6,33 +6,38 @@
     android:padding="16dp">
 
     <EditText
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/itemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Item Name" />
+        android:hint="@string/item_name" />
 
     <Spinner
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/itemComponent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/itemPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Price"
+        android:hint="@string/price"
         android:inputType="numberDecimal" />
 
     <EditText
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/itemDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description" />
+        android:hint="@string/description" />
 
     <Button
+        android:theme="@style/FontLocalizedBold"
         android:id="@+id/createItemButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Item" />
+        android:text="@string/create_item" />
 
 </LinearLayout>

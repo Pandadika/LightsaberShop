@@ -5,14 +5,17 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     Button adminButton;
 
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         adminButton = findViewById(R.id.adminpage);
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,5 +42,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }

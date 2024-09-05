@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FontLocalizedBold">
+        <item name="android:fontFamily">@font/outer_rim_af</item>
+    </style>
+</resources>

@@ -4,10 +4,6 @@
     <string name="create_new_item">Create New Item</string>
     <string name="price">Price</string>
     <string name="description">Description</string>
-    <string name="english" translatable="false">English</string>
-    <string name="danish" translatable="false">Dansk</string>
-    <string name="huttese" translatable="false">Nal-Huttese</string>
     <string name="item_name">Item Name</string>
 
-    <!-- <string name="app_name">My App</string> -->
 </resources>
