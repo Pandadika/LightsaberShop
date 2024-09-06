@@ -5,5 +5,6 @@
     <string name="price">Pris</string>
     <string name="description">Beskrivelse</string>
     <string name="item_name">Navn</string>
+    <string name="admin">Admin</string>
 
 </resources>

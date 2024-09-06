@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="16dp">
+
+  <EditText
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/itemName"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:hint="@string/item_name" />
 
-    <EditText
-        android:theme="@style/FontLocalizedBold"
-        android:id="@+id/itemName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/item_name" />
+  <Spinner
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/itemComponent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
-    <Spinner
-        android:theme="@style/FontLocalizedBold"
-        android:id="@+id/itemComponent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+  <EditText
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/itemPrice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/price"
+    android:inputType="numberDecimal" />
 
-    <EditText
-        android:theme="@style/FontLocalizedBold"
-        android:id="@+id/itemPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/price"
-        android:inputType="numberDecimal" />
+  <EditText
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/itemDescription"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/description" />
 
-    <EditText
-        android:theme="@style/FontLocalizedBold"
-        android:id="@+id/itemDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/description" />
-
-    <Button
-        android:theme="@style/FontLocalizedBold"
-        android:id="@+id/createItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_item" />
+  <Button
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/createItemButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/create_item" />
 
 </LinearLayout>

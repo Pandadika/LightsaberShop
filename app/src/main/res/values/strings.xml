@@ -8,6 +8,8 @@
     <string name="danish" translatable="false">Dansk</string>
     <string name="huttese" translatable="false">Nal-Huttese</string>
     <string name="item_name">Item Name</string>
+    <string name="admin">Admin</string>
+    <string name="element_text" />
 
     <!-- <string name="app_name">My App</string> -->
 </resources>

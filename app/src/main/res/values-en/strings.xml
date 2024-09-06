@@ -5,5 +5,6 @@
     <string name="price">Price</string>
     <string name="description">Description</string>
     <string name="item_name">Item Name</string>
+    <string name="admin">Admin</string>
 
 </resources>
