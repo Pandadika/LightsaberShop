@@ -1,33 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="@dimen/list_item_height"
   android:layout_marginLeft="@dimen/margin_medium"
   android:layout_marginRight="@dimen/margin_medium"
-  android:gravity="center_vertical"
-  android:orientation="horizontal">
+  android:gravity="center_vertical">
 
   <TextView
-    android:id="@+id/rowItemTitle"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:text="@string/element_text"
-    android:theme="@style/FontLocalizedBold" />
-
-  <TextView
-    android:id="@+id/rowItemPrice"
+    android:id="@+id/textView"
+    android:theme="@style/FontLocalizedBold"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:text="Price" />
-
-  <ImageButton
-    android:id="@+id/buttonAddToCart"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:background="@drawable/baseline_add_shopping_cart_24"
-    android:contentDescription="AddToCart" />
-
-</LinearLayout>
+    android:text="@string/element_text"/>
+</FrameLayout>

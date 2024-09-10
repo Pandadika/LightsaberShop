@@ -9,6 +9,19 @@
 
   <include layout="@layout/layout_base" />
 
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello World!"
+    android:theme="@style/FontLocalizedBold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.047"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.101" />
+
   <view
     android:id="@+id/recyclerView"
     class="androidx.recyclerview.widget.RecyclerView"
@@ -17,7 +30,7 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/rowItemTitle">
+    app:layout_constraintTop_toBottomOf="@+id/textView">
   </view>
 
   <Button
@@ -32,31 +45,5 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.207" />
-
-  <Button
-    android:id="@+id/loginpage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Login"
-    android:theme="@style/FontLocalizedBold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.616"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.206" />
-
-  <Button
-    android:id="@+id/cartpage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Cart"
-    android:theme="@style/FontLocalizedBold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.294"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.206" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

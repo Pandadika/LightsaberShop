@@ -2,6 +2,4 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="toast_background_success">#4CAF50</color> <!-- Green color -->
-    <color name="toast_background_fail">#B22222</color> <!-- red color -->
 </resources>
