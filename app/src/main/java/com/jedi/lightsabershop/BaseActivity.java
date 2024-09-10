@@ -16,7 +16,16 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.util.Locale;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public abstract class BaseActivity extends AppCompatActivity {
+  String apiUrl = "http://192.168.1.233:8080/";
+  Retrofit retrofit = new Retrofit.Builder()
+      .baseUrl(apiUrl)
+      .addConverterFactory(GsonConverterFactory.create())
+      .build();
+  Cart cart = CartSingleton.getInstance().getCart();
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
