@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
+import com.jedi.jedishared.Item;
+
 public class ItemDetailsActivity extends BaseActivity {
   
   @Override
@@ -25,9 +27,9 @@ public class ItemDetailsActivity extends BaseActivity {
     TextView itemDescriptionText = findViewById(R.id.item_description_text);
     
     if (item != null) {
-      itemPriceText.setText(getString(R.string.price) + " " + item.price);
-      itemNameText.setText(getString(R.string.item_name) + " " + item.name);
-      itemDescriptionText.setText(getString(R.string.description) + " " + item.description);
+      itemPriceText.setText(getString(R.string.price) + " " + item.getPrice());
+      itemNameText.setText(getString(R.string.item_name) + " " + item.getName());
+      itemDescriptionText.setText(getString(R.string.description) + " " + item.getDescription());
     }
   }
 }
