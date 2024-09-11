@@ -9,30 +9,73 @@
   <include layout="@layout/layout_base" />
 
   <LinearLayout
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="0dp"
     android:layout_marginTop="64dp"
     android:orientation="vertical"
     android:padding="16dp"
+    app:layout_constraintBottom_toTopOf="@+id/buttonLayout"
     app:layout_constraintTop_toTopOf="parent"
     tools:layout_editor_absoluteX="0dp">
 
     <TextView
-      android:theme="@style/FontLocalizedBold"
       android:id="@+id/item_name_text"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:theme="@style/FontLocalizedBold" />
 
     <TextView
-      android:theme="@style/FontLocalizedBold"
+      android:id="@+id/item_type_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:theme="@style/FontLocalizedBold" />
+
+    <TextView
       android:id="@+id/item_price_text"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:theme="@style/FontLocalizedBold" />
 
     <TextView
-      android:theme="@style/FontLocalizedBold"
       android:id="@+id/item_description_text"
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content" />
+      android:layout_height="wrap_content"
+      android:theme="@style/FontLocalizedBold" />
+
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/addToCartButton"
+      android:text="Add to Cart" />
   </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/buttonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <Button
+      android:id="@+id/editButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Edit" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"/>
+
+    <Button
+      android:id="@+id/deleteButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Delete" />
+  </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

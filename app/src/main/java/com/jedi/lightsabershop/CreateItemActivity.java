@@ -31,7 +31,7 @@ public class CreateItemActivity extends BaseActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ItemApi itemApi = retrofit.create(ItemApi.class);
+    ItemApi itemApi = getRetrofit().create(ItemApi.class);
     
     setContentView(R.layout.activity_create_item);
     
@@ -49,15 +49,15 @@ public class CreateItemActivity extends BaseActivity {
       double price = Double.parseDouble(itemPriceInput.getText().toString());
       String description = itemDescriptionInput.getText().toString();
       
-      Item newItem = new Item(name, component, price, description); //TODO Save this :D
+      Item newItem = new Item(UUID.randomUUID(), name, component, price, description); //UUID should realy be handled by db
       Gson gson = new Gson();
-      String json = gson.toJson(newItem);
       
       TextView textView = new TextView(CreateItemActivity.this);
       textView.setText("No connection");
       textView.setBackgroundResource(R.drawable.rounded_tost_background_fail);
       Call<UUID> call = itemApi.createItem(newItem);
           call.enqueue(new Callback<UUID>() {
+            
             @Override
             public void onResponse(@NonNull Call<UUID> call, @NonNull Response<UUID> response) {
               if (!response.isSuccessful()) {

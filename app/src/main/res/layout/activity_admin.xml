@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent" android:layout_height="match_parent"
-android:orientation="vertical" android:gravity="center" android:padding="16dp">
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
 
+  <include layout="@layout/layout_base" />
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginTop="64dp"
+    android:orientation="vertical" android:gravity="center" android:padding="16dp">
 
-<Button
-  android:theme="@style/FontLocalizedBold"
-  android:id="@+id/createItemButton"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:text="@string/create_new_item" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:theme="@style/FontLocalizedBold"
+      android:text="Api Address" />
 
-</LinearLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:padding="16dp">
+
+      <EditText
+        android:id="@+id/ipAddressEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="IP Address"
+        android:inputType="text" />
+      <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:textAlignment="center"
+        android:text=":" />
+      <EditText
+        android:id="@+id/portEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:hint="Port"
+        android:inputType="number" />
+      <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/updateNetworkSettingsButton" />
+
+    </LinearLayout>
+  <Button
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/createItemButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/create_new_item" />
+
+  <Button
+    android:theme="@style/FontLocalizedBold"
+    android:id="@+id/logoutButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/logout" />
+
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

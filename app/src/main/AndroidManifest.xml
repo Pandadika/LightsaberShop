@@ -37,6 +37,9 @@
     <activity android:name=".ItemDetailsActivity"/>
     <activity android:name=".LoginActivity"/>
     <activity android:name=".CartActivity"/>
+    <activity android:name=".RegisterActivity"/>
+    <activity android:name=".EditUserActivity"/>
+    <activity android:name=".EditItemActivity"/>
 
   </application>
 

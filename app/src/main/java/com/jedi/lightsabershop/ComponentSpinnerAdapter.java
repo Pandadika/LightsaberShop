@@ -29,4 +29,5 @@ public class ComponentSpinnerAdapter extends ArrayAdapter<Component> {
     view.setText(component.getFormattedName());
     return view;
   }
+  
 }

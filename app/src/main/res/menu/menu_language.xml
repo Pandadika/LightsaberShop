@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/english"
-        android:title="@string/english" />
-    <item
-        android:id="@+id/danish"
-        android:title="@string/danish" />
-		
-	<item
-        android:id="@+id/huttese"
-        android:title="@string/huttese" />
-    </menu>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/cart"
+    android:icon="@drawable/baseline_shopping_cart_24"
+    android:title=""
+    app:showAsAction="ifRoom" />
+  <item
+    android:id="@+id/login"
+    android:icon="@drawable/baseline_person_24"
+    android:title=""
+    app:showAsAction="ifRoom" />
+
+  <item
+    android:id="@+id/english"
+    android:title="@string/english" />
+  <item
+    android:id="@+id/danish"
+    android:title="@string/danish" />
+  <item
+    android:id="@+id/huttese"
+    android:title="@string/huttese" />
+</menu>

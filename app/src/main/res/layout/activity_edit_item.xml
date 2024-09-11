@@ -42,10 +42,10 @@
 
     <Button
       android:theme="@style/FontLocalizedBold"
-      android:id="@+id/createItemButton"
+      android:id="@+id/updateItemButton"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/create_item" />
+      android:text="@string/edit_item" />
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

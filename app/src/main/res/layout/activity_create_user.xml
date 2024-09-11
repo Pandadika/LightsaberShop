@@ -13,39 +13,48 @@
     android:padding="16dp">
 
     <EditText
-      android:theme="@style/FontLocalizedBold"
-      android:id="@+id/itemName"
+      android:id="@+id/editTextUsername"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="@string/item_name" />
-
-    <Spinner
-      android:theme="@style/FontLocalizedBold"
-      android:id="@+id/itemComponent"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+      android:hint="Username" />
 
     <EditText
-      android:theme="@style/FontLocalizedBold"
-      android:id="@+id/itemPrice"
+      android:id="@+id/editTextFirstname"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="@string/price"
-      android:inputType="numberDecimal" />
+      android:hint="First name" />
 
     <EditText
-      android:theme="@style/FontLocalizedBold"
-      android:id="@+id/itemDescription"
+      android:id="@+id/editTextSurname"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="@string/description" />
+      android:hint="Surname" />
+
+    <EditText
+      android:id="@+id/editTextEmail"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Email" />
+
+    <EditText
+      android:id="@+id/editTextPassword"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Password"
+      android:inputType="textPassword" />
+
+    <EditText
+      android:id="@+id/editTextConfirmPassword"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Confirm Password"
+      android:inputType="textPassword" />
 
     <Button
-      android:theme="@style/FontLocalizedBold"
-      android:id="@+id/createItemButton"
-      android:layout_width="wrap_content"
+      android:id="@+id/buttonRegister"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/create_item" />
+      android:text="Register" />
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

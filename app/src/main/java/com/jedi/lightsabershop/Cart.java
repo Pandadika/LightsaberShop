@@ -35,6 +35,10 @@ public class Cart {
     }
   }
   
+  public boolean anyItems() {
+    return !items.isEmpty();
+  }
+  
   public List<CartItem> getItems() {
     return items;
   }
@@ -53,6 +57,10 @@ public class Cart {
       total += cartItem.getItem().getPrice() * cartItem.getQuantity();
     }
     return total;
+  }
+  
+  public void emptyCart() {
+    items.clear();
   }
   
   // Inner class for CartItem

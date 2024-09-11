@@ -1,15 +1,29 @@
 <resources>
-    <string name="app_name">Lightsaber Shop</string>
-    <string name="create_item">Create Item</string>
-    <string name="create_new_item">Create New Item</string>
-    <string name="price">Price</string>
-    <string name="description">Description</string>
-    <string name="english" translatable="false">English</string>
-    <string name="danish" translatable="false">Dansk</string>
-    <string name="huttese" translatable="false">Nal-Huttese</string>
-    <string name="item_name">Item Name</string>
-    <string name="admin">Admin</string>
-    <string name="element_text" />
+  <string name="app_name">Lightsaber Shop</string>
+  <string name="create_item">Create Item</string>
+  <string name="create_new_item">Create New Item</string>
+  <string name="price">Price</string>
+  <string name="description">Description</string>
+  <string name="english" translatable="false">English</string>
+  <string name="danish" translatable="false">Dansk</string>
+  <string name="huttese" translatable="false">Nal-Huttese</string>
+  <string name="item_name">Item Name</string>
+  <string name="admin">Admin</string>
+  <string name="element_text" translatable="false" />
+  <string name="logout">Logout</string>
+  <string name="create_new_user">Create New User</string>
+  <string name="blade_emitter">Blade Emitter</string>
+  <string name="focusing_lens">Focusing Lens</string>
+  <string name="not_defined" translatable="false">not defined</string>
+  <string name="cycling_field_energizers">cycling_field_energizers</string>
+  <string name="main_hilt">main_hilt</string>
+  <string name="kyber_crystal">kyber_crystal</string>
+  <string name="lightsaber_energy_core">lightsaber_energy_core</string>
+  <string name="hand_grip">hand_grip</string>
+  <string name="inertia_power_insulator">inertia_power_insulator</string>
+  <string name="pomelle_cap">pomelle_cap</string>
+  <string name="type">Component</string>
+  <string name="edit_item">Update</string>
 
-    <!-- <string name="app_name">My App</string> -->
+  <!-- <string name="app_name">My App</string> -->
 </resources>

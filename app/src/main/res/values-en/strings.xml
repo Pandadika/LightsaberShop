@@ -6,5 +6,19 @@
     <string name="description">Description</string>
     <string name="item_name">Item Name</string>
     <string name="admin">Admin</string>
+  <string name="logout">Logout</string>
+  <string name="create_new_user">Register new user</string>
+  <string name="blade_emitter">Blade Emitter</string>
+  <string name="focusing_lens">Focusing Lens</string>
+  <string name="cycling_field_energizers">Cycling Field Energizers</string>
+  <string name="main_hilt">Main Hilt</string>
+  <string name="kyber_crystal">Kyber Crystal</string>
+  <string name="lightsaber_energy_core">Lightsaber Energy Core</string>
+  <string name="hand_grip">Hand Grip</string>
+  <string name="inertia_power_insulator">Inertia Power Insulator</string>
+  <string name="pomelle_cap">Pomelle Cap</string>
+  <string name="type">Component</string>
+  <string name="edit_item">Update</string>
+
 
 </resources>

@@ -6,5 +6,18 @@
     <string name="description">Beskrivelse</string>
     <string name="item_name">Navn</string>
     <string name="admin">Admin</string>
+  <string name="logout">Log ud</string>
+  <string name="create_new_user">Opret ny bruger</string>
+  <string name="blade_emitter">Klingeemitter</string>
+  <string name="focusing_lens">Fokuseringslinse</string>
+  <string name="cycling_field_energizers">Cykliske feltenergizer</string>
+  <string name="main_hilt">Hovedgreb</string>
+  <string name="kyber_crystal">Kyberkrystal</string>
+  <string name="lightsaber_energy_core">Lyssværdsenergikerne</string>
+  <string name="hand_grip">Håndgreb</string>
+  <string name="inertia_power_insulator">Inerti-strømisolator</string>
+  <string name="pomelle_cap">Pommel</string>
+  <string name="type">Komponent</string>
+  <string name="edit_item">Update</string>
 
 </resources>

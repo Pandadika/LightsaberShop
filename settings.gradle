@@ -21,7 +21,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/Pandadika/LightsaberShop")
             credentials {
                 username = "Pandadika"
-                password = "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"
+                password = "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"
             }
         }
     }

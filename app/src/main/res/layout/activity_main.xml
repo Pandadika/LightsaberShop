@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/main"
@@ -9,54 +10,28 @@
 
   <include layout="@layout/layout_base" />
 
-  <view
-    android:id="@+id/recyclerView"
-    class="androidx.recyclerview.widget.RecyclerView"
+  <LinearLayout
+    android:id="@+id/searchAndRecyclerLayout"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/rowItemTitle">
-  </view>
-
-  <Button
-    android:id="@+id/adminpage"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/admin"
-    android:theme="@style/FontLocalizedBold"
-    app:layout_constraintBottom_toBottomOf="parent"
+    android:orientation="vertical"
+    android:layout_marginTop="64dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.95"
+    app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.207" />
+    app:layout_constraintTop_toTopOf="parent">
 
-  <Button
-    android:id="@+id/loginpage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Login"
-    android:theme="@style/FontLocalizedBold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.616"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.206" />
+    <androidx.appcompat.widget.SearchView
+      android:id="@+id/searchBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp" />
 
-  <Button
-    android:id="@+id/cartpage"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Cart"
-    android:theme="@style/FontLocalizedBold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.294"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.206" />
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="8dp" />
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
