@@ -5,4 +5,8 @@
     <color name="toast_background_success">#5e9ce9</color>
     <color name="toast_background_fail">#f63e3e</color>
     <color name="toast_background_medium">#689672</color>
+    <color name="deep_space_blue">#0D112B</color>
+    <color name="cosmic_black">#030518</color>
+    <color name="nebula_pink">#E3358C</color>
+    <color name="stardust_silver">#B8C1D1</color>
 </resources>

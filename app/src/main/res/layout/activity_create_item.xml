@@ -41,6 +41,15 @@
       android:hint="@string/description" />
 
     <Button
+        android:theme="@style/FontLocalizedBold"
+        android:id="@+id/takePictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:text="@string/take_picture">
+
+    </Button>
+
+    <Button
       android:theme="@style/FontLocalizedBold"
       android:id="@+id/createItemButton"
       android:layout_width="wrap_content"

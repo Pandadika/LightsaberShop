@@ -42,6 +42,8 @@
   <string name="save">Save</string>
   <string name="user_updated_successfully">User updated successfully</string>
   <string name="user_update_failed">Failed to update user</string>
+    <string name="take_photo">Take photo</string>
+    <string name="take_picture">Take picture</string>
 
-  <!-- <string name="app_name">My App</string> -->
+    <!-- <string name="app_name">My App</string> -->
 </resources>

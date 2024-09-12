@@ -1,7 +1,9 @@
 package com.jedi.lightsabershop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -54,6 +56,13 @@ public class MainActivity extends BaseActivity {
         return true;
       }
     });
+
+//    Button button = findViewById(R.id.butt);
+//    button.setOnClickListener(v -> {
+//      Intent intent = new Intent(this, CameraActivity.class);
+//      startActivity(intent);
+//    });
+
     
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -76,7 +85,7 @@ public class MainActivity extends BaseActivity {
         if (response.isSuccessful() && response.body() != null) {
           items.clear(); // Clear existing items
           for (Item item : response.body()) {
-            items.add(new Item(item.getId(), item.getName(), item.getComponent(), item.getPrice(), item.getDescription()));
+            items.add(new Item(item.getId(), item.getName(), item.getComponent(), item.getPrice(), item.getDescription(), item.getImageId()));
           }
           runOnUiThread(() -> {
             itemAdapter.getSorted(items); // Sort the updated list
