@@ -19,6 +19,24 @@
   <string name="pomelle_cap">Pomelle Cap</string>
   <string name="type">Component</string>
   <string name="edit_item">Update</string>
+    <string name="added_to_cart">Added to cart</string>
+    <string name="item_delete_success">Item deleted successfully</string>
+    <string name="item_delete_failt">Failed to delete item</string>
+    <string name="total_items_0">Total Items: 0</string>
+    <string name="total_price_0_00">Total Price: $0.00</string>
+    <string name="checkout">Checkout</string>
+    <string name="total_items">Total items</string>
+    <string name="checkout_success">Checkout Successfully!</string>
+    <string name="total_pris">Total price</string>
+    <string name="cart_is_empty">Cart is empty!</string>
+    <string name="username">Username</string>
+    <string name="first_name">First name</string>
+    <string name="surname">Surname</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="save">Save</string>
+    <string name="user_updated_successfully">User updated successfully</string>
+  <string name="user_update_failed">Failed to update user</string>
 
 
 </resources>

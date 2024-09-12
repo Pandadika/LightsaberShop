@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.jedi.lightsabershop.BaseActivity;
+import com.jedi.lightsabershop.Cart;
+import com.jedi.lightsabershop.R;
 
 import java.util.List;
 
@@ -57,7 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
   public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
     Cart.CartItem cartItem = cartItems.get(position);
     holder.textViewItemName.setText(cartItem.getItem().getName());
-    holder.textViewItemPrice.setText("$" + String.format("%.2f", cartItem.getItem().getPrice()));
+    holder.textViewItemPrice.setText("₡" + String.format("%.2f", cartItem.getItem().getPrice()));
     holder.textViewQuantity.setText("Quantity: " + cartItem.getQuantity());
     
     holder.getButtonRemove().setOnClickListener(v -> {

@@ -2,7 +2,6 @@ package com.jedi.lightsabershop;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +14,7 @@ import androidx.annotation.NonNull;
 import com.google.gson.Gson;
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.adapters.ComponentSpinnerAdapter;
 
 import java.util.UUID;
 

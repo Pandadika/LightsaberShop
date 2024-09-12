@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.adapters.ItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,8 +65,11 @@ public class MainActivity extends BaseActivity {
     
     ItemApi itemApi = getRetrofit().create(ItemApi.class);
     Call<List<Item>> savedItems = itemApi.getItems();
-    
     List<Item> items = new ArrayList<>();
+    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+    itemAdapter = new ItemAdapter(items, MainActivity.this);
+    recyclerView.setAdapter(itemAdapter);
     savedItems.enqueue(new Callback<List<Item>>() {
       @Override
       public void onResponse(@NonNull Call<List<Item>> call, @NonNull Response<List<Item>> response) {
@@ -75,10 +79,8 @@ public class MainActivity extends BaseActivity {
             items.add(new Item(item.getId(), item.getName(), item.getComponent(), item.getPrice(), item.getDescription()));
           }
           runOnUiThread(() -> {
-              RecyclerView recyclerView = findViewById(R.id.recyclerView);
-              recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-              itemAdapter = new ItemAdapter(items, MainActivity.this);
-              recyclerView.setAdapter(itemAdapter);
+            itemAdapter.getSorted(items); // Sort the updated list
+            itemAdapter.notifyDataSetChanged();
           });
         } else {
           Log.e("MainActivity", "Error fetching items: API Response: " + response.message());
@@ -90,21 +92,5 @@ public class MainActivity extends BaseActivity {
         Log.e("MainActivity", "Error fetching items: Throwable ", t);
       }
     });
-  }
-  
-  public static List<Item> generateItems() {
-    List<Item> items = new ArrayList<>();
-    
-    items.add(new Item(UUID.randomUUID(), "Simple Blade Emitter", Component.BLADE_EMITTER, 100.0, "Avery boring blade emitter"));
-    items.add(new Item(UUID.randomUUID(), "Precision Focusing Lens", Component.FOCUSING_LENS, 75.50, "Enhances blade stability"));
-    items.add(new Item(UUID.randomUUID(), "Dual-Phase Energizers", Component.CYCLING_FIELD_ENERGIZERS, 150.0, "Provides faster blade ignition"));
-    items.add(new Item(UUID.randomUUID(), "Ergonomic Main Hilt", Component.MAIN_HILT, 200.0, "Comfortable grip for extended use"));
-    items.add(new Item(UUID.randomUUID(), "Blue Kyber Crystal", Component.KYBER_CRYSTAL, 500.0, "Imbues the blade with blue energy"));
-    items.add(new Item(UUID.randomUUID(), "High-Capacity Energy Core", Component.LIGHTSABER_ENERGY_CORE, 300.0, "Extends lightsaber power reserves"));
-    items.add(new Item(UUID.randomUUID(), "Leather Hand Grip", Component.HAND_GRIP, 50.0, "Adds a classic touch"));
-    items.add(new Item(UUID.randomUUID(), "Reinforced Power Insulator", Component.INERT_POWER_INSULATOR, 80.0, "Protects against electrical surges"));
-    items.add(new Item(UUID.randomUUID(), "Ornate Pommel Cap", Component.POMMEL_CAP, 60.0, "A decorative finishing touch"));
-    
-    return items;
   }
 }

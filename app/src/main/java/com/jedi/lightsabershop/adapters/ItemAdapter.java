@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,7 +8,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -17,13 +16,19 @@ import android.widget.Toast;
 
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.ItemDetailsActivity;
+import com.jedi.lightsabershop.MainActivity;
+import com.jedi.lightsabershop.R;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> implements Filterable {
-  private List<Item> localDataSet;
+  private final List<Item> localDataSet;
   private List<Item> filteredList;
   private Context context;
   
@@ -46,7 +51,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> im
               filteredItems.add(item);
             }
           }
-          
           results.values = filteredItems;
           results.count = filteredItems.size();
         }
@@ -57,11 +61,21 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> im
       @Override
       protected void publishResults(CharSequence constraint, FilterResults results) {
         filteredList = (List<Item>) results.values;
+        getSorted(filteredList);
         notifyDataSetChanged();
       }
     };
   }
-  
+
+  public void getSorted(List<Item> localDataSet) {
+    localDataSet.sort(new Comparator<Item>() {
+      @Override
+      public int compare(Item item1, Item item2) {
+        return componentTranslator(item1.getComponent()).compareTo(componentTranslator(item2.getComponent()));
+      }
+    });
+  }
+
   public static class ViewHolder extends RecyclerView.ViewHolder {
     private final TextView textView;
     private final TextView textViewType;
@@ -92,6 +106,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> im
   
   public ItemAdapter(List<Item> dataSet, Context context) {
     localDataSet = dataSet;
+    getSorted(localDataSet);
     this.context = context;
   }
   
@@ -119,7 +134,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> im
     
     viewHolder.getButtonAddToCart().setOnClickListener(v -> {
       ((MainActivity) context).cart.addItem(currentItem);
-      CustomToast(context, "Added to cart: " + currentItem.getName(), true, Gravity.BOTTOM, Toast.LENGTH_SHORT);
+      context.getString(R.string.added_to_cart);
+      CustomToast(context, context.getString(R.string.added_to_cart) +": " + currentItem.getName(), true, Gravity.BOTTOM, Toast.LENGTH_SHORT);
     });
     
     viewHolder.itemView.setOnClickListener(view -> {
@@ -130,6 +146,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> im
   }
   
   private String componentTranslator(Component component) {
+    if (context == null) {
+      return "";
+    }
     return switch (component) {
       case BLADE_EMITTER -> context.getString(R.string.blade_emitter);
       case FOCUSING_LENS -> context.getString(R.string.focusing_lens);

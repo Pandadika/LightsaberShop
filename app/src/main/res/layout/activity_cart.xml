@@ -33,13 +33,13 @@
           android:id="@+id/textViewTotalItems"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Total Items: 0" />
+          android:text="@string/total_items_0" />
 
         <TextView
           android:id="@+id/textViewTotalPrice"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Total Price: $0.00" />
+          android:text="@string/total_price_0_00" />
       </LinearLayout>
 
       <Button
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Checkout" />
+        android:text="@string/checkout" />
 
     </LinearLayout>
   </RelativeLayout>

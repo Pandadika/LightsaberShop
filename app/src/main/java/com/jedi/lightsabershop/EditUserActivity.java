@@ -48,7 +48,7 @@ public class EditUserActivity extends BaseActivity {
                        editTextFirstname.setText(user.getFirstName());
                        editTextSurname.setText(user.getSurName());
                        editTextEmail.setText(user.getEmail());
-                       editTextPassword.setText(user.getPassword());
+                       //editTextPassword.setText(user.getPassword());
                      } else {
                        // Handle error response
                      }
@@ -91,8 +91,13 @@ public class EditUserActivity extends BaseActivity {
       newUser.setUsername(decodedJWT.getSubject());
       newUser.setFirstName(firstName);
       newUser.setSurName(lastName);
-      newUser.setPassword(password);
+      if (!password.isEmpty()) {
+        newUser.setPassword(password);
+      }
       newUser.setEmail(email);
+      if (roles.contains("ADMIN")){
+        newUser.setIsAdmin(true);
+      }
       
       
       Call<User> updateCall = userApi.update(decodedJWT.getSubject(), newUser);
@@ -104,11 +109,10 @@ public class EditUserActivity extends BaseActivity {
             editTextFirstname.setText(user.getFirstName());
             editTextSurname.setText(user.getSurName());
             editTextEmail.setText(user.getEmail());
-            editTextPassword.setText(user.getPassword());
-            CustomToast(EditUserActivity.this, "User updated successfully", true, Gravity.TOP, Toast.LENGTH_SHORT);
+            CustomToast(EditUserActivity.this, EditUserActivity.this.getString(R.string.user_updated_successfully), true, Gravity.TOP, Toast.LENGTH_SHORT);
           }
           else {
-            CustomToast(EditUserActivity.this, "Failed to update user", false, Gravity.TOP, Toast.LENGTH_SHORT);
+            CustomToast(EditUserActivity.this, EditUserActivity.this.getString(R.string.user_update_failed), false, Gravity.TOP, Toast.LENGTH_SHORT);
           }
         }
         

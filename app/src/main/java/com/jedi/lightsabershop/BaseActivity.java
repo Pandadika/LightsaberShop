@@ -36,14 +36,14 @@ public abstract class BaseActivity extends AppCompatActivity {
   int port;
   String apiUrl;
   
-  Cart cart = CartSingleton.getInstance().getCart();
+  public Cart cart = CartSingleton.getInstance().getCart();
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     
     SharedPreferences sharedPreferences = getSharedPreferences("network_settings", MODE_PRIVATE);
-    ip = sharedPreferences.getString("ip", "192.168.1.233"); // Default IP
+    ip = sharedPreferences.getString("ip", "192.168.0.61"); // Default IP
     port = sharedPreferences.getInt("port", 8080); // Default port
     apiUrl = "http://" + ip + ":" + port + "/";
     

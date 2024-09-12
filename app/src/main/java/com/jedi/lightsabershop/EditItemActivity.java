@@ -1,24 +1,19 @@
 package com.jedi.lightsabershop;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import com.auth0.jwt.interfaces.Claim;
-import com.auth0.jwt.interfaces.DecodedJWT;
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
-import com.jedi.jedishared.User;
+import com.jedi.lightsabershop.adapters.ComponentSpinnerAdapter;
 
 public class EditItemActivity extends BaseActivity {
   EditText itemName;
@@ -48,6 +43,7 @@ public class EditItemActivity extends BaseActivity {
     
     updateItemButton.setOnClickListener(v -> {
       Item updatedItem = new Item();
+      updatedItem.setId(item.getId());
       updatedItem.setName(itemName.getText().toString());
       updatedItem.setDescription(itemDescription.getText().toString());
       updatedItem.setPrice(Double.parseDouble(itemPrice.getText().toString()));

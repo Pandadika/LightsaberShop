@@ -57,17 +57,19 @@ public class ItemDetailsActivity extends BaseActivity {
     
     addToCartButton.setOnClickListener(view -> {
       this.cart.addItem(item);
-      CustomToast(ItemDetailsActivity.this, "Added to cart: " + item.getName(), true, Gravity.BOTTOM, Toast.LENGTH_SHORT);
+      CustomToast(ItemDetailsActivity.this, this.getString(R.string.added_to_cart) +": " + item.getName(), true, Gravity.BOTTOM, Toast.LENGTH_SHORT);
     });
     
     DecodedJWT decodedJWT = tryDecodedJWT();
-    Claim rolesClaim = decodedJWT.getClaim("roles");
-    String roles = rolesClaim.asString();
-    if (roles.contains("ADMIN")) {
-      editButton.setVisibility(View.VISIBLE);
-      deleteButton.setVisibility(View.VISIBLE);
+    if (decodedJWT != null) {
+      Claim rolesClaim = decodedJWT.getClaim("roles");
+      String roles = rolesClaim.asString();
+      if (roles.contains("ADMIN")) {
+        editButton.setVisibility(View.VISIBLE);
+        deleteButton.setVisibility(View.VISIBLE);
+      }
     }
-    
+
     editButton.setOnClickListener(view -> {
       Intent intent1 = new Intent(this, EditItemActivity.class);
       intent1.putExtra("item", item);
@@ -82,14 +84,14 @@ public class ItemDetailsActivity extends BaseActivity {
         @Override
         public void onResponse(Call<Void> call, Response<Void> response) {
           if (response.isSuccessful()) {
-            CustomToast(ItemDetailsActivity.this, "Item deleted successfully", true, Gravity.TOP, Toast.LENGTH_SHORT);
+            CustomToast(ItemDetailsActivity.this, ItemDetailsActivity.this.getString(R.string.item_delete_success), true, Gravity.TOP, Toast.LENGTH_SHORT);
             finish();
           }
         }
         
         @Override
         public void onFailure(Call<Void> call, Throwable t) {
-          CustomToast(ItemDetailsActivity.this, "Failed to delete item", false, Gravity.TOP, Toast.LENGTH_SHORT);
+          CustomToast(ItemDetailsActivity.this, ItemDetailsActivity.this.getString(R.string.item_delete_failt), false, Gravity.TOP, Toast.LENGTH_SHORT);
         }
       });
     });

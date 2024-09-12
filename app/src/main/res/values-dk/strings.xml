@@ -19,5 +19,23 @@
   <string name="pomelle_cap">Pommel</string>
   <string name="type">Komponent</string>
   <string name="edit_item">Update</string>
+    <string name="added_to_cart">Tilføjet til kurv</string>
+    <string name="item_delete_success">Item slettet succesfuldt</string>
+    <string name="item_delete_failt">Sletning fejlede</string>
+    <string name="total_items_0">Total produkter: 0</string>
+    <string name="total_price_0_00">Total Pris: $0.00</string>
+    <string name="checkout">Check ud</string>
+    <string name="total_items">Total produkter</string>
+    <string name="checkout_success">Checkout Successfuld!</string>
+    <string name="total_pris">Total pris</string>
+    <string name="cart_is_empty">Kurv er tom!</string>
+    <string name="username">Brugernavn</string>
+    <string name="first_name">Fornavn</string>
+    <string name="surname">Efternavn</string>
+    <string name="confirm_password">Gentag Password</string>
+    <string name="add_to_cart">Tilføj til kurv</string>
+    <string name="save">Gem</string>
+    <string name="user_updated_successfully">Bruger oplysninger opdateret</string>
+    <string name="user_update_failed">Kunne ikke opdaterer bruger oplysninger</string>
 
 </resources>

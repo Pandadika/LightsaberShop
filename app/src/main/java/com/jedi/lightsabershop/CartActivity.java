@@ -11,6 +11,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jedi.lightsabershop.adapters.CartAdapter;
+
 public class CartActivity extends BaseActivity implements CartAdapter.CartUpdateListener {
   
   private RecyclerView cartRecyclerView;
@@ -47,10 +49,11 @@ public class CartActivity extends BaseActivity implements CartAdapter.CartUpdate
         cart.emptyCart();
         cartAdapter.notifyDataSetChanged();
         updateCartSummary();
-        CustomToast(this, "Checkout successful!", true, Gravity.TOP, Toast.LENGTH_SHORT);
+
+        CustomToast(this, this.getString(R.string.checkout_success), true, Gravity.TOP, Toast.LENGTH_SHORT);
       }
       else {
-        CustomToast(this, "Cart is empty!", false, Gravity.TOP, Toast.LENGTH_SHORT);
+        CustomToast(this, this.getString(R.string.cart_is_empty), false, Gravity.TOP, Toast.LENGTH_SHORT);
       }
     });
   }
@@ -67,7 +70,8 @@ public class CartActivity extends BaseActivity implements CartAdapter.CartUpdate
   }
   
   private void updateCartSummary() {
-    textViewTotalItems.setText("Total Items: " + cart.getTotalItems());
-    textViewTotalPrice.setText("Total Price: ₡ " + String.format("%.2f", cart.getTotalPrice()));
+
+    textViewTotalItems.setText(this.getString(R.string.total_items)+": " + cart.getTotalItems());
+    textViewTotalPrice.setText(this.getString(R.string.total_pris)+": ₡ " + String.format("%.2f", cart.getTotalPrice()));
   }
 }

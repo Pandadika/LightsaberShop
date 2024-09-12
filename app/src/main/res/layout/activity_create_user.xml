@@ -16,19 +16,19 @@
       android:id="@+id/editTextUsername"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="Username" />
+      android:hint="@string/username" />
 
     <EditText
       android:id="@+id/editTextFirstname"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="First name" />
+      android:hint="@string/first_name" />
 
     <EditText
       android:id="@+id/editTextSurname"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="Surname" />
+      android:hint="@string/surname" />
 
     <EditText
       android:id="@+id/editTextEmail"
@@ -47,7 +47,7 @@
       android:id="@+id/editTextConfirmPassword"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:hint="Confirm Password"
+      android:hint="@string/confirm_password"
       android:inputType="textPassword" />
 
     <Button

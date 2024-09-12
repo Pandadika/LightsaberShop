@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.adapters;
 
 import android.content.Context;
 import android.view.View;
