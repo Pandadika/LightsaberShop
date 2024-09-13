@@ -2,7 +2,7 @@
 
 ### Add secrets to get packages `settings.gradle`
 
-``` json
+``` gradle
 pluginManagement {
     repositories {
         google {
