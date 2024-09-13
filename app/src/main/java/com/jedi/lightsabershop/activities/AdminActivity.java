@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,6 +7,10 @@ import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
+
+import com.jedi.lightsabershop.R;
 
 public class AdminActivity extends BaseActivity {
   
@@ -19,6 +23,8 @@ public class AdminActivity extends BaseActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_admin);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     
     ipAddressEditText = findViewById(R.id.ipAddressEditText);
     portEditText = findViewById(R.id.portEditText);
@@ -26,8 +32,8 @@ public class AdminActivity extends BaseActivity {
     logoutButton = findViewById(R.id.logoutButton);
     
     SharedPreferences sharedPreferences = getSharedPreferences("network_settings", MODE_PRIVATE);
-    ip = sharedPreferences.getString("ip", ip); // Get from SharedPreferences or use default
-    port = sharedPreferences.getInt("port", port); // Get from SharedPreferences or use default
+    ip = sharedPreferences.getString("ip", ip);
+    port = sharedPreferences.getInt("port", port);
     
     ipAddressEditText.setText(ip);
     portEditText.setText(String.valueOf(port));
@@ -36,8 +42,7 @@ public class AdminActivity extends BaseActivity {
     saveButton.setOnClickListener(view -> {
       updateNetworkSettings(ipAddressEditText.getText().toString(), Integer.parseInt(portEditText.getText().toString()));
       CustomToast(AdminActivity.this, "Network settings updated", true, Gravity.CENTER, Toast.LENGTH_SHORT);
-      
-      // Save to SharedPreferences
+
       SharedPreferences.Editor editor = sharedPreferences.edit();
       editor.putString("ip", ip);
       editor.putInt("port", port);

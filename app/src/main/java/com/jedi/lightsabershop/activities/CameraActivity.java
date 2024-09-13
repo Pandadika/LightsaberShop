@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.Manifest;
 import android.content.ContentValues;
@@ -11,45 +11,35 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.SurfaceView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.common.util.concurrent.ListenableFuture;
-
-import net.coobird.thumbnailator.Thumbnails;
+import com.jedi.lightsabershop.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CameraActivity extends BaseActivity {
   private static final String TAG = "CameraXApp";
@@ -107,11 +97,10 @@ public class CameraActivity extends BaseActivity {
 
           @Override
           public void onImageSaved(@NonNull ImageCapture.OutputFileResults output) {
-            //onImageSaved(output);
               Uri savedUri = output.getSavedUri();
               if (savedUri != null) {
                 Intent resultIntent = new Intent();
-                resultIntent.setData(savedUri); // Set the Uri as data
+                resultIntent.setData(savedUri);
                 setResult(RESULT_OK, resultIntent);
                 finish();
               }
@@ -183,33 +172,6 @@ public class CameraActivity extends BaseActivity {
       e.printStackTrace();
       return null;
     }
-  }
-
-  public void onImageSaved(@NonNull ImageCapture.OutputFileResults output) {
-    Uri savedUri = output.getSavedUri();
-    if (savedUri != null) {
-      try {
-        File imageFile = new File(savedUri.getPath());
-        Bitmap originalBitmap = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
-        if (originalBitmap != null) {
-          Bitmap compressedBitmap = Bitmap.createScaledBitmap(originalBitmap, 640, 480, true);
-          File compressedImageFile = new File(imageFile.getParent(), ".thumbnail_" + imageFile.getName());
-
-          try (OutputStream outputStream = new FileOutputStream(compressedImageFile)) {
-            compressedBitmap.compress(Bitmap.CompressFormat.JPEG, 80, outputStream); // Adjust quality as needed
-          }
-
-          byte[] imageByteArray = convertImageToByteArray(compressedImageFile);
-          // ... rest of your code to send imageByteArray to the database ...
-
-          originalBitmap.recycle();
-          compressedBitmap.recycle();
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-    // ... other code ...
   }
 
   private final ActivityResultLauncher<String[]> activityResultLauncher =

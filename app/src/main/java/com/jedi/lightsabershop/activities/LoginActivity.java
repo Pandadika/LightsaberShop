@@ -1,22 +1,19 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import com.jedi.jedishared.User;
-
-import java.io.IOException;
-import java.security.GeneralSecurityException;
+import com.jedi.lightsabershop.models.JwtResponse;
+import com.jedi.lightsabershop.R;
+import com.jedi.lightsabershop.api.UserApi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,8 +65,6 @@ public class LoginActivity extends BaseActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("jwt_token", response.body().getToken());
                 editor.apply();
-/*                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);*/
                 finish();
               }
               else {

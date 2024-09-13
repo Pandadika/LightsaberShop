@@ -1,9 +1,7 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -15,13 +13,13 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.api.ItemApi;
+import com.jedi.lightsabershop.R;
 import com.jedi.lightsabershop.adapters.ItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,13 +54,6 @@ public class MainActivity extends BaseActivity {
         return true;
       }
     });
-
-//    Button button = findViewById(R.id.butt);
-//    button.setOnClickListener(v -> {
-//      Intent intent = new Intent(this, CameraActivity.class);
-//      startActivity(intent);
-//    });
-
     
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -83,7 +74,7 @@ public class MainActivity extends BaseActivity {
       @Override
       public void onResponse(@NonNull Call<List<Item>> call, @NonNull Response<List<Item>> response) {
         if (response.isSuccessful() && response.body() != null) {
-          items.clear(); // Clear existing items
+          items.clear();
           for (Item item : response.body()) {
             items.add(new Item(item.getId(), item.getName(), item.getComponent(), item.getPrice(), item.getDescription(), item.getImageId()));
           }

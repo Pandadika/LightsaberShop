@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.models;
 
 public class JwtResponse {
   private String token;

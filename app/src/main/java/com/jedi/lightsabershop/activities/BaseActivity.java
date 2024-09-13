@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,10 +7,8 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -31,7 +29,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import com.auth0.jwt.JWT;
-import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -41,6 +38,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.jedi.jedishared.Image;
+import com.jedi.lightsabershop.models.Cart;
+import com.jedi.lightsabershop.models.CartSingleton;
+import com.jedi.lightsabershop.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
   String ip;
@@ -54,8 +54,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
 
     SharedPreferences sharedPreferences = getSharedPreferences("network_settings", MODE_PRIVATE);
-    ip = sharedPreferences.getString("ip", "192.168.1.200"); // Default IP
-    port = sharedPreferences.getInt("port", 8080); // Default port
+    ip = sharedPreferences.getString("ip", "192.168.1.200");
+    port = sharedPreferences.getInt("port", 8080);
     apiUrl = "http://" + ip + ":" + port + "/";
 
     SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
@@ -86,12 +86,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     editor.apply();
   }
 
-  //  public Retrofit getRetrofit() {
-//    return new Retrofit.Builder()
-//        .baseUrl(apiUrl)
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .build();
-//  }
   public Retrofit getRetrofit() {
     Gson gson = new GsonBuilder()
         .registerTypeAdapter(Image.class, new ImageDeserializer())
@@ -99,7 +93,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     return new Retrofit.Builder()
         .baseUrl(apiUrl)
-        .addConverterFactory(GsonConverterFactory.create(gson)) // Pass the Gson instance
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build();
   }
 
@@ -119,15 +113,8 @@ public abstract class BaseActivity extends AppCompatActivity {
       DecodedJWT decodedJWT = tryDecodedJWT();
       Intent intent;
       if (decodedJWT != null) {
-        Claim rolesClaim = decodedJWT.getClaim("roles");
-        String roles = rolesClaim.asString();
-        if (roles.contains("admin")) {
-          intent = new Intent(this, AdminActivity.class);
-          startActivity(intent);
-        } else {
-          intent = new Intent(this, EditUserActivity.class); //TODO make this the user page
-          startActivity(intent);
-        }
+        intent = new Intent(this, EditUserActivity.class);
+        startActivity(intent);
       }
       else {
         intent = new Intent(this, LoginActivity.class);
@@ -155,7 +142,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     Locale.setDefault(locale);
     Configuration config = new Configuration();
     config.setLocale(locale);
-    //getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 
     SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
     prefs.edit().putString("language", languageCode).apply();
@@ -240,7 +226,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public Image deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
       JsonObject jsonObject = json.getAsJsonObject();
-      String imageBase64 = jsonObject.get("image").getAsString(); // Assuming "image" is a string
+      String imageBase64 = jsonObject.get("image").getAsString();
       Image result = new Image();
       byte[] imageData = Base64.decode(imageBase64, Base64.DEFAULT);
       result.setImage(imageData);

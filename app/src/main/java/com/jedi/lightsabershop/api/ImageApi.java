@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.api;
 
 import com.jedi.jedishared.Image;
 

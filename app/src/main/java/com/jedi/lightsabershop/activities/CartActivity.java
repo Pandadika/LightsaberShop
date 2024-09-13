@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jedi.lightsabershop.R;
 import com.jedi.lightsabershop.adapters.CartAdapter;
 
 public class CartActivity extends BaseActivity implements CartAdapter.CartUpdateListener {

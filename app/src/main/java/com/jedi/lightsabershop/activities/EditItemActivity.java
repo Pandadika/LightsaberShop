@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -7,12 +7,16 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.api.ItemApi;
+import com.jedi.lightsabershop.R;
 import com.jedi.lightsabershop.adapters.ComponentSpinnerAdapter;
 
 public class EditItemActivity extends BaseActivity {
@@ -27,6 +31,8 @@ public class EditItemActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_edit_item);
     ItemApi itemApi = getRetrofit().create(ItemApi.class);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     
     itemName = findViewById(R.id.itemName);
     itemDescription = findViewById(R.id.itemDescription);

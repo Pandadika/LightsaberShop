@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.jedi.lightsabershop.BaseActivity;
-import com.jedi.lightsabershop.Cart;
+import com.jedi.lightsabershop.activities.BaseActivity;
+import com.jedi.lightsabershop.models.Cart;
 import com.jedi.lightsabershop.R;
 
 import java.util.List;

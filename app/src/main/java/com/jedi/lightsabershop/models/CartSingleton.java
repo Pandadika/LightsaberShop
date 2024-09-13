@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.models;
 
 public class CartSingleton {
   private static CartSingleton instance;

@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -16,6 +18,8 @@ import retrofit2.Response;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.jedi.jedishared.User;
+import com.jedi.lightsabershop.R;
+import com.jedi.lightsabershop.api.UserApi;
 
 public class EditUserActivity extends BaseActivity {
   
@@ -30,6 +34,8 @@ public class EditUserActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_edit_user);
     UserApi userApi = getRetrofit().create(UserApi.class);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     
     textViewUsername = findViewById(R.id.textViewUsername);
     editTextFirstname = findViewById(R.id.editTextFirstname);
@@ -48,9 +54,8 @@ public class EditUserActivity extends BaseActivity {
                        editTextFirstname.setText(user.getFirstName());
                        editTextSurname.setText(user.getSurName());
                        editTextEmail.setText(user.getEmail());
-                       //editTextPassword.setText(user.getPassword());
                      } else {
-                       // Handle error response
+                       CustomToast(EditUserActivity.this, "Failed to update user", false, Gravity.TOP, Toast.LENGTH_SHORT);
                      }
                    }
                    

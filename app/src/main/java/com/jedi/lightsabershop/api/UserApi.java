@@ -1,6 +1,7 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.api;
 
 import com.jedi.jedishared.User;
+import com.jedi.lightsabershop.models.JwtResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

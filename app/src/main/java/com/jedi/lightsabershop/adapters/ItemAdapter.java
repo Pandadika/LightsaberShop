@@ -16,14 +16,13 @@ import android.widget.Toast;
 
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Item;
-import com.jedi.lightsabershop.ItemDetailsActivity;
-import com.jedi.lightsabershop.MainActivity;
+import com.jedi.lightsabershop.activities.ItemDetailsActivity;
+import com.jedi.lightsabershop.activities.MainActivity;
 import com.jedi.lightsabershop.R;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 

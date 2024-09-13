@@ -1,4 +1,4 @@
-package com.jedi.lightsabershop;
+package com.jedi.lightsabershop.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,11 +17,15 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.gson.Gson;
 import com.jedi.jedishared.Component;
 import com.jedi.jedishared.Image;
 import com.jedi.jedishared.Item;
+import com.jedi.lightsabershop.api.ImageApi;
+import com.jedi.lightsabershop.api.ItemApi;
+import com.jedi.lightsabershop.R;
 import com.jedi.lightsabershop.adapters.ComponentSpinnerAdapter;
 
 import java.io.ByteArrayOutputStream;
@@ -46,6 +50,8 @@ public class CreateItemActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
     ItemApi itemApi = getRetrofit().create(ItemApi.class);
     ImageApi imageApi = getRetrofit().create(ImageApi.class);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     
     setContentView(R.layout.activity_create_item);
     
